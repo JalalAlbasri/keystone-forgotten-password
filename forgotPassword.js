@@ -69,7 +69,9 @@ const forgotPassword = ({ onForgotEmail }) => (req, res, next) => {
         res.status(200).json({ success: true });
       }
     })
-    .catch(next);
+    .catch(err => {
+      next(err);
+    });
 };
 
 module.exports = forgotPassword;
