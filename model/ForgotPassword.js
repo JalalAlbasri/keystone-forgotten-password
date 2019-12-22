@@ -2,7 +2,9 @@ const keystone = require("keystone");
 const uuid = require("uuid/v4");
 const Types = keystone.Field.Types;
 
-var ForgotPassword = new keystone.List("ForgotPassword");
+var ForgotPassword = new keystone.List("ForgotPassword", {
+  hidden: true
+});
 
 ForgotPassword.add({
   dateRequested: { type: Date, required: true, default: () => Date.now() },
@@ -11,8 +13,7 @@ ForgotPassword.add({
   requestedByIp: { type: Types.TextArray },
   dateAccessed: { type: Date },
   accessedByIp: { type: Types.TextArray },
-  expired: { type: Boolean, required: true, default: false },
-  hidden: true
+  expired: { type: Boolean, required: true, default: false }
 });
 
 ForgotPassword.register();
