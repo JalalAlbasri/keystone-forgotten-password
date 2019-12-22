@@ -66,12 +66,7 @@ const forgotPassword = ({ onForgotEmail }) => (req, res, next) => {
             });
           });
       } else {
-        // TODO: Show error or not?
-        // res.status(200).json({ success: true });
-        res.status(400).json({
-          success: false,
-          errors: { emailSend: "Email failed to send" }
-        });
+        res.status(200).json({ success: true });
       }
     })
     .catch(next);
