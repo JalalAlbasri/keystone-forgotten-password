@@ -11,7 +11,8 @@ ForgotPassword.add({
   requestedByIp: { type: Types.TextArray },
   dateAccessed: { type: Date },
   accessedByIp: { type: Types.TextArray },
-  expired: { type: Boolean, required: true, default: false }
+  expired: { type: Boolean, required: true, default: false },
+  hidden: true
 });
 
 ForgotPassword.register();
